@@ -1,0 +1,28 @@
+{
+  "name": "serajsabz",
+  "version": "1.0.0",
+  "description": "Websit for seraj sabz holding with MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devomid/serajsabz.git"
+  },
+  "keywords": [
+    "website",
+    "holding",
+    "accounting",
+    "IT",
+    "network",
+    "AI",
+    "MERN"
+  ],
+  "author": "devOm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devomid/serajsabz/issues"
+  },
+  "homepage": "https://github.com/devomid/serajsabz#readme"
+}
