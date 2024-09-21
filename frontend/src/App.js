@@ -8,6 +8,7 @@ import OurStory from './pages/ourStroy';
 import OurTeam from './pages/ourTeam';
 import NavBar from './components/navBar/navBar';
 import Footer from './components/footer/footer';
+import FooterPage from './components/footer/footerPage';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/ourTeam' element={<OurTeam />} />
         </Routes>
         <footer><Footer /></footer>
+        <FooterPage />
       </BrowserRouter>
     </div>
   );

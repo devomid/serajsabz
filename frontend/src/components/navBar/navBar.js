@@ -5,12 +5,8 @@ import LanguageIcon from '@mui/icons-material/Language';
 
 const NavBar = () => {
     return (
-        <Box sx={{ backgroundColor: 'black', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 2 }}>
-            <Box>
-                <Typography sx={{ color: 'white' }}>
-                    Seraj Sabz
-                </Typography>
-            </Box>
+        <Box sx={{ backgroundColor: 'black', display: 'flex', justifyContent: 'end', alignItems: 'center', padding: 2, zIndex: 100, marginTop: 2 }}>
+
             <Box sx={{ width: '10%', display: 'flex', justifyContent: 'space-evenly' }}>
                 <IconButton sx={{ color: 'white' }}>
                     <LanguageIcon />

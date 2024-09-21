@@ -7,12 +7,7 @@ import { IconButton } from '@mui/joy';
 
 const Footer = () => {
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center', padding: 5, backgroundColor: 'black' }}>
-            <Box>
-                <Typography sx={{ color: 'white' }}>
-                    lorem
-                </Typography>
-            </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'end', flexDirection: 'row', alignItems: 'center', padding: 5, backgroundColor: 'black' }}>
 
             <Box>
                 <IconButton sx={{ color: 'white' }}>
