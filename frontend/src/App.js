@@ -10,12 +10,13 @@ import NavBar from './components/navBar/navBar';
 import Footer from './components/footer/footer';
 import FooterPage from './components/footer/footerPage';
 
+
 function App() {
 
   return (
     <div className="App">
       <BrowserRouter>
-        <nav><NavBar /></nav>
+        <nav style={{ position: 'fixed', right: 0, top: 0, width: '100%' }}><NavBar /></nav>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/branches' element={<Brancehs />} />
@@ -24,8 +25,8 @@ function App() {
           <Route path='/ourStory' element={<OurStory />} />
           <Route path='/ourTeam' element={<OurTeam />} />
         </Routes>
-        <footer><Footer /></footer>
-        <FooterPage />
+        <footer style={{ position: 'fixed', right: 0, bottom: 0, width: '100%' }}><Footer /></footer>
+        {/* <FooterPage /> */}
       </BrowserRouter>
     </div>
   );

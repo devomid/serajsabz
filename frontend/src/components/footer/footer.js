@@ -7,21 +7,18 @@ import { IconButton } from '@mui/joy';
 
 const Footer = () => {
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'end', flexDirection: 'row', alignItems: 'center', padding: 5, backgroundColor: 'black' }}>
-
-            <Box>
-                <IconButton sx={{ color: 'white' }}>
-                    <InstagramIcon />
-                </IconButton>
-                <IconButton sx={{ color: 'white' }}>
-                    <TelegramIcon />
-                </IconButton>
-                <IconButton sx={{ color: 'white' }}>
-                    <CallIcon />
-                </IconButton>
-            </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'end', flexDirection: 'row', alignItems: 'center', padding: 5, backgroundColor: 'transparent', gap: 3 }}>
+            <IconButton sx={{ color: 'white', padding: 0.5 }}>
+                <InstagramIcon sx={{ height: 35, width: 35 }} />
+            </IconButton>
+            <IconButton sx={{ color: 'white' }}>
+                <TelegramIcon sx={{ height: 35, width: 35, padding: 0.5 }} />
+            </IconButton>
+            <IconButton sx={{ color: 'white' }}>
+                <CallIcon sx={{ height: 35, width: 35, padding: 0.5 }} />
+            </IconButton>
         </Box>
     )
 }
 
-export default Footer
+export default Footer;

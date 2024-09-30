@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/joy'
+import { Box, Typography } from '@mui/joy';
 import React from 'react';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -9,7 +9,7 @@ const FooterPage = () => {
     return (
         <Box sx={{ height: '100vh', backgroundColor: 'rgba(14, 59, 65, 0.8)' }}>
             <Box sx={{ padding: 5, display: 'flex', justifyContent: 'start' }}>
-                <Typography sx={{ color: 'white' }}>
+                <Typography level='h3' sx={{ color: 'white' }}>
                     Contact Us
                 </Typography>
             </Box>

@@ -1,0 +1,65 @@
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.fade-in-first {
+    opacity: 1;
+    transition: opacity 0.7s ease-in;
+}
+
+.fade-in-second {
+    opacity: 1;
+    transition: opacity 0.9s ease-in;
+}
+
+.fade-in-third {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+    /* Longer duration for the last component */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+} */
