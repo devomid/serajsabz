@@ -9,11 +9,12 @@ import OurServicesShort from '../components/ourServices/ourServicesShort';
 import OurTeamShort from '../components/ourTeam/ourTeamShort';
 import ScrollDependentComponent from '../components/scrollPosition/scrollPosition';
 import FooterPage from '../components/footer/footerPage';
+import { GeneralState } from '../contexts/generalContext';
 
 const Home = () => {
     const [init, setInit] = useState(false);
-    const navigate = useNavigate();
-
+    const [contentShow, setContentShow] = useState(true);
+    const { menuOpen, setMenuOpen } = GeneralState();
 
     useEffect(() => {
         initParticlesEngine(async (engine) => {
@@ -550,7 +551,7 @@ const Home = () => {
                     />
                 </Box>
 
-                <Box sx={{ position: 'fixed', left: 0 }}>
+                <Box sx={{ position: 'fixed', left: 0, display: menuOpen && 'none' }}>
                     <ScrollDependentComponent>
                         <OurStroryShort />
                         <OurCustomersShort />
@@ -561,7 +562,7 @@ const Home = () => {
 
 
             </Box>
-            <Box>
+            <Box sx={{ display: menuOpen && 'none' }}>
                 <FooterPage />
             </Box>
         </>

@@ -26,10 +26,10 @@ function ScrollDependentComponent({ children }) {
 
         // Handle component transitions
         if (newActiveIndex !== activeComponentIndex) {
-            setFadeClass('fade-out');
+            setFadeClass(`fade-out component-${newActiveIndex}`);
             setTimeout(() => {
                 setActiveComponentIndex(newActiveIndex);
-                setFadeClass('fade-in');
+                setFadeClass(`fade-in component-${newActiveIndex}`);
             }, 500); // Match duration to your fade-out duration
         }
     }, [scrollPosition, activeComponentIndex]);
