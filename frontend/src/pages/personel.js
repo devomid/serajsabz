@@ -539,12 +539,9 @@ const Personel = () => {
                     <Box sx={{ padding: 2, width: '50%' }}>
                         <img src='https://ohdearstudio.com.sg/wp-content/uploads/2021/05/OhDearStudio_019-1024x683.jpg' />
                     </Box>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, justifyContent: 'center', alignItems: 'end', width: '40%', height: '100%' }}>
-                        
-                        <Button  startDecorator={
-                            <CallIcon sx={{ height: 35, width: 35, padding: 0.5 }} />
-                        } sx={{ height: 70 }} fullWidth>Instagram</Button>
 
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, justifyContent: 'center', alignItems: 'end', width: '40%', height: '100%' }}>
+                        <Button sx={{ height: 70 }} fullWidth>Instagram</Button>
                         <Button sx={{ height: 70 }} fullWidth>telegram</Button>
                         <Button sx={{ height: 70 }} fullWidth>linkedin</Button>
                         <Button sx={{ height: 70 }} fullWidth>tel</Button>
@@ -558,3 +555,4 @@ const Personel = () => {
 }
 
 export default Personel
+
