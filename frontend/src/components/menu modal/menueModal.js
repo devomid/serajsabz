@@ -49,7 +49,7 @@ const MenueModal = ({ open, setOpen }) => {
                 </Button>
                 <Divider orientation='vertical' />
                 <Button onClick={() => {
-                    navigation('/ourTeam');
+                    navigation('/ourteam');
                     setIsHome(false);
                     setOpen(false);
                 }} variant='plain'>

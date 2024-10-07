@@ -1,33 +1,18 @@
-import { Box, Typography } from '@mui/joy';
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Box, Button, Typography } from '@mui/joy';
+import Particles from '@tsparticles/react';
+import React, { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom';
-import OurStroryShort from '../components/ourStory/ourStoryShort';
-import OurCustomersShort from '../components/ourCustomers/ourCustomersShort';
-import OurServicesShort from '../components/ourServices/ourServicesShort';
-import OurTeamShort from '../components/ourTeam/ourTeamShort';
-import ScrollDependentComponent from '../components/scrollPosition/scrollPosition';
-import FooterPage from '../components/footer/footerPage';
 import { GeneralState } from '../contexts/generalContext';
+import CallIcon from '@mui/icons-material/Call';
 
-const Home = () => {
-    const [init, setInit] = useState(false);
-    const [contentShow, setContentShow] = useState(true);
-    const { menuOpen, setMenuOpen } = GeneralState();
+const Personel = () => {
+    const { menuOpen, setMenuOpen, isHome, setIsHome } = GeneralState();
 
-    useEffect(() => {
-        initParticlesEngine(async (engine) => {
-            await loadSlim(engine);
-        }).then(() => {
-            setInit(true);
-        });
-    }, []);
+    const navigate = useNavigate();
 
-    // const particlesLoaded = (container) => {
-    //     console.log(container);
-    // };
-
+    const particlesLoaded = () => {
+        console.log('loaded');
+    };
 
     const options = useMemo(
         () => (
@@ -35,7 +20,7 @@ const Home = () => {
                 "autoPlay": true,
                 "background": {
                     "color": {
-                        "value": "#000"
+                        "value": "#0c4b53"
                     },
                     "image": "",
                     "position": "",
@@ -47,7 +32,7 @@ const Home = () => {
                     "composite": "destination-out",
                     "cover": {
                         "color": {
-                            "value": "#0c4b53"
+                            "value": "#000"
                         },
                         "opacity": 0.7
                     },
@@ -178,7 +163,7 @@ const Home = () => {
                             },
                             "shadow": {
                                 "color": {
-                                    "value": "#000000"
+                                    "value": "#000"
                                 },
                                 "length": 2000
                             }
@@ -216,7 +201,7 @@ const Home = () => {
                         }
                     },
                     "color": {
-                        "value": "#0c4b53",
+                        "value": "#000",
                         "animation": {
                             "h": {
                                 "count": 0,
@@ -491,7 +476,7 @@ const Home = () => {
                     "links": {
                         "blink": false,
                         "color": {
-                            "value": "#0c4b53"
+                            "value": "#000"
                         },
                         "consent": true,
                         "distance": 150,
@@ -542,31 +527,34 @@ const Home = () => {
 
     return (
         <>
-            <Box sx={{ height: '205vh', display: 'flex', alignItems: 'start', marginTop: '7rem' }}>
+            <Box sx={{ height: '100%', width: '100%', display: 'flex', alignItems: 'start', marginTop: '7rem' }}>
                 <Box sx={{ zIndex: -1 }}>
                     <Particles
                         id="tsparticles"
-                        // particlesLoaded={particlesLoaded}
+                        particlesLoaded={particlesLoaded}
                         options={options}
                     />
                 </Box>
+                <Box sx={{ display: menuOpen ? 'none' : 'flex', zIndex: 2, flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', gap: 5 }}>
+                    <Box sx={{ padding: 2, width: '50%' }}>
+                        <img src='https://ohdearstudio.com.sg/wp-content/uploads/2021/05/OhDearStudio_019-1024x683.jpg' />
+                    </Box>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, justifyContent: 'center', alignItems: 'end', width: '40%', height: '100%' }}>
+                        
+                        <Button  startDecorator={
+                            <CallIcon sx={{ height: 35, width: 35, padding: 0.5 }} />
+                        } sx={{ height: 70 }} fullWidth>Instagram</Button>
 
-                <Box sx={{ position: 'fixed', left: 0, display: menuOpen && 'none' }}>
-                    <ScrollDependentComponent>
-                        <OurStroryShort />
-                        <OurCustomersShort />
-                        <OurServicesShort />
-                        <OurTeamShort />
-                    </ScrollDependentComponent>
+                        <Button sx={{ height: 70 }} fullWidth>telegram</Button>
+                        <Button sx={{ height: 70 }} fullWidth>linkedin</Button>
+                        <Button sx={{ height: 70 }} fullWidth>tel</Button>
+                        <Button sx={{ height: 70 }} fullWidth>sms</Button>
+                        <Button sx={{ height: 70 }} fullWidth>email</Button>
+                    </Box>
                 </Box>
-
-
-            </Box>
-            <Box sx={{ display: menuOpen && 'none' }}>
-                <FooterPage />
             </Box>
         </>
     )
 }
 
-export default Home;
+export default Personel

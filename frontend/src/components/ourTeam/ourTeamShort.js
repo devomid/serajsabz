@@ -12,7 +12,7 @@ const OurTeamShort = () => {
 
             <Box sx={{ width: '50%', height: '40%' }}>
                 <img onClick={() => {
-                    navigate('/ourTeam');
+                    navigate('/ourteam');
                     setIsHome(false);
                 }} width={'100%'} height={'75%'} src='https://media.istockphoto.com/id/1414896610/de/vektor/moderne-kreative-unserer-dienstleistungen-banner-template-mit-6-optionen-wie-visuelles.jpg?s=612x612&w=0&k=20&c=toV2gPtdjA_H2QoTpUvDRfTudqroAxO4zOizNxD4UQo=' />
                 <Box sx={{ width: '100%', height: '30%', padding: 1, overflow: 'hidden' }}>
@@ -37,7 +37,7 @@ const OurTeamShort = () => {
                 </Box>
             </Box>
 
-            
+
         </Box>
     )
 }

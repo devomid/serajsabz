@@ -9,6 +9,7 @@ import OurTeam from './pages/ourTeam';
 import NavBar from './components/navBar/navBar';
 import Footer from './components/footer/footer';
 import FooterPage from './components/footer/footerPage';
+import Personel from './pages/personel';
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
           <Route path='/ourCustomers' element={<OurCustomers />} />
           <Route path='/ourServices' element={<OurServices />} />
           <Route path='/ourStory' element={<OurStory />} />
-          <Route path='/ourTeam' element={<OurTeam />} />
+          <Route path='/ourteam' element={<OurTeam />} />
+          <Route path='/ourteam/personel' element={<Personel />} />
         </Routes>
         <footer style={{ position: 'fixed', right: 0, bottom: 0, width: '100%' }}><Footer /></footer>
         {/* <FooterPage /> */}
