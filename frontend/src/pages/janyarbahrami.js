@@ -4,8 +4,9 @@ import React, { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { GeneralState } from '../contexts/generalContext';
 import CallIcon from '@mui/icons-material/Call';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
-const Personel = () => {
+const Janyarbahrami = () => {
     const { menuOpen, setMenuOpen, isHome, setIsHome } = GeneralState();
 
     const navigate = useNavigate();
@@ -526,33 +527,50 @@ const Personel = () => {
     )
 
     return (
-        <>
-            <Box sx={{ height: '100%', width: '100%', display: 'flex', alignItems: 'start', marginTop: '7rem' }}>
-                <Box sx={{ zIndex: -1 }}>
-                    <Particles
-                        id="tsparticles"
-                        particlesLoaded={particlesLoaded}
-                        options={options}
-                    />
+        <Box sx={{ height: '100%', width: '100%', display: 'flex', alignItems: 'start', marginTop: '7rem' }}>
+            <Box sx={{ zIndex: -1 }}>
+                <Particles
+                    id="tsparticles"
+                    particlesLoaded={particlesLoaded}
+                    options={options}
+                />
+            </Box>
+            <Box sx={{ display: menuOpen ? 'none' : 'flex', zIndex: 2, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)', marginLeft: 3, marginRight: 3, padding: 4, boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
+
+                <Box sx={{ width: '50%' }}>
+                    <img style={{ borderRadius: 15, boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px' }} src='https://ohdearstudio.com.sg/wp-content/uploads/2021/05/OhDearStudio_019-1024x683.jpg' />
                 </Box>
-                <Box sx={{ display: menuOpen ? 'none' : 'flex', zIndex: 2, flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', gap: 5 }}>
-                    <Box sx={{ padding: 2, width: '50%' }}>
-                        <img src='https://ohdearstudio.com.sg/wp-content/uploads/2021/05/OhDearStudio_019-1024x683.jpg' />
+
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 5, justifyContent: 'center', alignItems: 'center', width: '40%', height: '100%' }}>
+                    <Box sx={{ alignSelf: 'start' }}>
+                        <Typography sx={{ color: 'white', marginBottom: 2 }} level='h2' alignSelf={'start'}>
+                            How to connect with Janyar Bahrami
+                        </Typography>
+                        <Typography sx={{ color: 'white' }} level='h5' alignSelf={'start'}>
+                            Chief Executive Officer
+                        </Typography>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>Instagram</Button>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>Telegram</Button>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>WhatsApp</Button>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>Phone</Button>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>Github</Button>
                     </Box>
 
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, justifyContent: 'center', alignItems: 'end', width: '40%', height: '100%' }}>
-                        <Button sx={{ height: 70 }} fullWidth>Instagram</Button>
-                        <Button sx={{ height: 70 }} fullWidth>telegram</Button>
-                        <Button sx={{ height: 70 }} fullWidth>linkedin</Button>
-                        <Button sx={{ height: 70 }} fullWidth>tel</Button>
-                        <Button sx={{ height: 70 }} fullWidth>sms</Button>
-                        <Button sx={{ height: 70 }} fullWidth>email</Button>
-                    </Box>
                 </Box>
             </Box>
-        </>
+        </Box>
     )
 }
 
-export default Personel
+export default Janyarbahrami
 

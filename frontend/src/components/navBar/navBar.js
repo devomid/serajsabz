@@ -13,7 +13,7 @@ const NavBar = () => {
     const navigate = useNavigate();
 
     return (
-        <Box sx={{ backgroundColor: 'transparent', display: 'flex', justifyContent: 'end', alignItems: 'center', padding: 2, zIndex: 100, marginTop: 2 }}>
+        <Box sx={{ backgroundColor: isHome ? 'transparent' : 'rgba(12, 75, 83, 0.7)', display: 'flex', justifyContent: 'end', alignItems: 'center', padding: 2, backdropFilter: isHome ? '' : 'blur(5px) saturate(150%)' }}>
             <MenueModal open={menuOpen} setOpen={setMenuOpen} />
 
             <Box sx={{ width: '10%', display: 'flex', justifyContent: 'space-evenly' }}>

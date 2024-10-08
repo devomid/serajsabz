@@ -17,13 +17,13 @@ const MenueModal = ({ open, setOpen }) => {
             }}
             sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
-            <Sheet variant="outlined" sx={{ minWidth: 300, borderRadius: 'lg', p: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, backgroundColor: 'rgba(255, 255, 255, 0.05)', paddingLeft: 10, paddingRight: 10, paddingTop: 5, paddingBottom: 5, border: 'rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(5px) saturate(220%)', border: '1px solid rgba(209, 213, 219, 0.3)' }}>
+            <Sheet variant="outlined" sx={{ minWidth: 300, borderRadius: 'lg', p: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, backgroundColor: 'rgba(12, 75, 83, 0.3)', paddingLeft: 10, paddingRight: 10, paddingTop: 5, paddingBottom: 5, border: 'rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(3px) saturate(220%)', border: '1px solid rgba(209, 213, 219, 0.3)' }}>
                 <Button onClick={() => {
                     navigation('/ourStory');
                     setIsHome(false);
                     setOpen(false);
                 }} variant='plain'>
-                    <Typography level='h4' color='primary'>
+                    <Typography sx={{ color: 'white' }} level='h4' color='primary'>
                         Our Story
                     </Typography>
                 </Button>
@@ -33,7 +33,7 @@ const MenueModal = ({ open, setOpen }) => {
                     setIsHome(false);
                     setOpen(false);
                 }} variant='plain'>
-                    <Typography level='h4' color='primary'>
+                    <Typography sx={{ color: 'white' }} level='h4' color='primary'>
                         Our Services
                     </Typography>
                 </Button>
@@ -43,7 +43,7 @@ const MenueModal = ({ open, setOpen }) => {
                     setIsHome(false);
                     setOpen(false);
                 }} variant='plain'>
-                    <Typography level='h4' color='primary'>
+                    <Typography sx={{ color: 'white' }} level='h4' color='primary'>
                         Our Customers
                     </Typography>
                 </Button>
@@ -53,7 +53,7 @@ const MenueModal = ({ open, setOpen }) => {
                     setIsHome(false);
                     setOpen(false);
                 }} variant='plain'>
-                    <Typography level='h4' color='primary'>
+                    <Typography sx={{ color: 'white' }} level='h4' color='primary'>
                         Our Team
                     </Typography>
                 </Button>

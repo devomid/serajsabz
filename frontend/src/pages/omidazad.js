@@ -1,15 +1,18 @@
-import { Box, Button, Card, Typography } from '@mui/joy';
+import { Box, Button, Typography } from '@mui/joy';
 import Particles from '@tsparticles/react';
 import React, { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { GeneralState } from '../contexts/generalContext';
+import CallIcon from '@mui/icons-material/Call';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
-const OurTeam = () => {
-    const navigate = useNavigate();
+const OmidAzad = () => {
     const { menuOpen, setMenuOpen, isHome, setIsHome } = GeneralState();
 
-    const particlesLoaded = (container) => {
-        console.log(container);
+    const navigate = useNavigate();
+
+    const particlesLoaded = () => {
+        console.log('loaded');
     };
 
     const options = useMemo(
@@ -524,90 +527,50 @@ const OurTeam = () => {
     )
 
     return (
-        <>
-            <Box sx={{ height: '190vh', display: 'flex', alignItems: 'start' }}>
-                <Box sx={{ zIndex: -1 }}>
-                    <Particles
-                        id="tsparticles"
-                        particlesLoaded={particlesLoaded}
-                        options={options}
-                    />
+        <Box sx={{ height: '100%', width: '100%', display: 'flex', alignItems: 'start', marginTop: '7rem' }}>
+            <Box sx={{ zIndex: -1 }}>
+                <Particles
+                    id="tsparticles"
+                    particlesLoaded={particlesLoaded}
+                    options={options}
+                />
+            </Box>
+            <Box sx={{ display: menuOpen ? 'none' : 'flex', zIndex: 2, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)', marginLeft: 3, marginRight: 3, padding: 4, boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
+
+                <Box sx={{ width: '50%' }}>
+                    <img style={{ borderRadius: 15, boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px' }} src='https://ohdearstudio.com.sg/wp-content/uploads/2021/05/OhDearStudio_019-1024x683.jpg' />
                 </Box>
-                <Box sx={{ display: menuOpen ? 'none' : 'flex', zIndex: 2, width: '100%', margin: 2, flexDirection: 'column' }}>
 
-                    <Box>
-                        <Box sx={{ display: 'flex', gap: 3, padding: 2, justifyContent: 'center', alignItems: 'center', height: '95vh' }}>
-                            <img style={{ borderRadius: 15 }} width={'80%'} height={'80%'} src='https://www.jonbradley.co.uk/wp-content/uploads/2020/07/TEAM-HEADSHOTS-TEAM-PAGE-ADD-IMAGES-9.jpg' alt='group shot' />
-                            <Box>
-                                <Box sx={{ marginBottom: 5 }}>
-                                    <Typography level='h2' sx={{ color: 'white' }}>
-                                        Our Team in Seraj Sabz
-                                    </Typography>
-                                </Box>
-                                <Typography sx={{ color: 'white' }}>
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-                                </Typography>
-                            </Box>
-                        </Box>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 5, justifyContent: 'center', alignItems: 'center', width: '40%', height: '100%' }}>
+                    <Box sx={{ alignSelf: 'start' }}>
+                        <Typography sx={{ color: 'white', marginBottom: 2 }} level='h2' alignSelf={'start'}>
+                            How to connect with Omid Azad
+                        </Typography>
+                        <Typography sx={{ color: 'white' }} level='h5' alignSelf={'start'}>
+                            Chief Technical Officer
+                        </Typography>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>Instagram</Button>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>Telegram</Button>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>WhatsApp</Button>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>Phone</Button>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                        <Button sx={{ height: 60, color: "#0c4b53" }} variant='soft' fullWidth>Github</Button>
                     </Box>
 
-                    <Box sx={{ display: 'flex', gap: 1 }}>
-
-                        <Box sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
-                            <Box>
-                                <img onClick={() => { navigate('/ourteam/janyarbahrami') }} width={'100%'} src='https://img.freepik.com/free-photo/portrait-optimistic-businessman-formalwear_1262-3600.jpg' />
-                            </Box>
-                            <Typography sx={{color:'white'}} level='h3'>
-                                Janyar Bahrami
-                            </Typography>
-                            <Typography sx={{color:'white'}} level='h5'>
-                                CEO
-                            </Typography>
-                            <Box>
-                                <Typography sx={{ color: 'white' }} level='body-sm'>
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        <Box sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
-                            <Box>
-                                <img onClick={() => { navigate('/ourteam/mohsenamoushahi') }} width={'100%'} src='https://img.freepik.com/premium-photo/young-businessman-outdoor-modern-setting_53419-11374.jpg' />
-                            </Box>
-                            <Typography sx={{ color: 'white' }} level='h3'>
-                                Mohsen Amoushahi
-                            </Typography>
-                            <Typography sx={{ color: 'white' }} level='h5'>
-                                CMO
-                            </Typography>
-                            <Box>
-                                <Typography sx={{ color: 'white' }} level='body-sm'>
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
-                                </Typography>
-                            </Box>
-                        </Box>
-
-                        <Box sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
-                            <Box>
-                                <img onClick={() => { navigate('/ourteam/omidazad') }} width={'100%'} src='https://img.freepik.com/premium-photo/professional-man-profile-portrait-business-formawear-isolated-white-copy-space-manager_545934-52514.jpg' />
-                            </Box>
-                            <Typography sx={{ color: 'white' }} level='h3'>
-                                Omid Azad
-                            </Typography>
-                            <Typography sx={{ color: 'white' }} level='h5'>
-                                CTO
-                            </Typography>
-                            <Box>
-                                <Typography sx={{ color: 'white' }} level='body-sm'>
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
-                                </Typography>
-                            </Box>
-                        </Box>
-                    </Box>
                 </Box>
             </Box>
-        </>
+        </Box>
     )
 }
 
-export default OurTeam
+export default OmidAzad
+

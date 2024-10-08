@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/joy';
+import { Box, Grid, Typography } from '@mui/joy';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import React, { useEffect, useMemo, useRef, useState } from 'react';
@@ -542,7 +542,7 @@ const Home = () => {
 
     return (
         <>
-            <Box sx={{ height: '205vh', display: 'flex', alignItems: 'start', marginTop: '7rem' }}>
+            <Box sx={{ height: '205vh', display: 'flex', alignItems: 'start', marginTop: '7rem', maxWidth: '100%' }}>
                 <Box sx={{ zIndex: -1 }}>
                     <Particles
                         id="tsparticles"
@@ -550,20 +550,18 @@ const Home = () => {
                         options={options}
                     />
                 </Box>
-
-                <Box sx={{ position: 'fixed', left: 0, display: menuOpen && 'none' }}>
-                    <ScrollDependentComponent>
-                        <OurStroryShort />
-                        <OurCustomersShort />
-                        <OurServicesShort />
-                        <OurTeamShort />
-                    </ScrollDependentComponent>
-                </Box>
-
-
-            </Box>
-            <Box sx={{ display: menuOpen && 'none' }}>
-                <FooterPage />
+                <Grid container spacing={2} sx={{ flexGrow: 1 }}>
+                    <Grid size={8}>
+                        <Box sx={{ position: 'fixed', left: 0, display: menuOpen && 'none' }}>
+                            <ScrollDependentComponent>
+                                <OurStroryShort />
+                                <OurCustomersShort />
+                                <OurServicesShort />
+                                <OurTeamShort />
+                            </ScrollDependentComponent>
+                        </Box>
+                    </Grid>
+                </Grid>
             </Box>
         </>
     )
