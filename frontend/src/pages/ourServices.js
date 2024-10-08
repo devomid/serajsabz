@@ -18,7 +18,7 @@ const OurServices = () => {
                 "autoPlay": true,
                 "background": {
                     "color": {
-                        "value": "#0c4b53"
+                        "value": "#484d2c"
                     },
                     "image": "",
                     "position": "",

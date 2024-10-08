@@ -9,7 +9,6 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import { useNavigate } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
-import { duration } from '@mui/material';
 
 const NavBar = () => {
     const { menuOpen, setMenuOpen, isHome, setIsHome } = GeneralState();
@@ -23,7 +22,7 @@ const NavBar = () => {
 
 
     return (
-        <Box component={'div'} data-aos="fade-down" sx={{ backgroundColor: isHome ? 'transparent' : 'rgba(12, 75, 83, 0.7)', display: 'flex', justifyContent: 'end', alignItems: 'center', padding: 2, backdropFilter: isHome ? '' : 'blur(5px) saturate(150%)' }}>
+        <Box component={'div'} data-aos="fade-down" sx={{ backgroundColor: isHome ? 'transparent' : 'rgba(71, 77, 44, 0.7)', display: 'flex', justifyContent: 'end', alignItems: 'center', padding: 2, backdropFilter: isHome ? '' : 'blur(5px) saturate(150%)' }}>
             <MenueModal open={menuOpen} setOpen={setMenuOpen} />
 
             <Box sx={{ width: '10%', display: 'flex', justifyContent: 'space-evenly' }}>

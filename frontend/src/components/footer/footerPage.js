@@ -7,7 +7,7 @@ import { IconButton } from '@mui/joy';
 
 const FooterPage = () => {
     return (
-        <Box sx={{ height: '40vh', backgroundColor: 'rgba(14, 59, 65, 0.8)', marginBottom: 25, marginLeft: 5, marginRight: 5, borderRadius: 'lg' }}>
+        <Box sx={{ height: '40vh', backgroundColor: 'rgba(72, 77, 44, 0.8)', marginBottom: 25, marginLeft: 5, marginRight: 5, borderRadius: 'lg', backdropFilter:'blur(5px) saturation(120%)' }}>
             <Box sx={{ padding: 5, display: 'flex', justifyContent: 'start' }}>
                 <Typography level='h3' sx={{ color: 'white' }}>
                     Contact Us

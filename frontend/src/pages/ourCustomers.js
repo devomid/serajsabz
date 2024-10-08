@@ -18,7 +18,7 @@ const OurCustomers = () => {
                 "autoPlay": true,
                 "background": {
                     "color": {
-                        "value": "#0c4b53"
+                        "value": "#484d2c"
                     },
                     "image": "",
                     "position": "",
@@ -535,7 +535,7 @@ const OurCustomers = () => {
             <Box sx={{ display: menuOpen && 'none', zIndex: 20 }}>
                 <Typography>Our Customers</Typography>
                 <Button onClick={() => {
-                    navigate("/"); 
+                    navigate("/");
                     setIsHome(true);
                 }} >
                     go to home

@@ -216,7 +216,7 @@ const Home = () => {
                         }
                     },
                     "color": {
-                        "value": "#0c4b53",
+                        "value": "#474c2b",
                         "animation": {
                             "h": {
                                 "count": 0,
@@ -491,7 +491,7 @@ const Home = () => {
                     "links": {
                         "blink": false,
                         "color": {
-                            "value": "#0c4b53"
+                            "value": "#666e3b"
                         },
                         "consent": true,
                         "distance": 150,

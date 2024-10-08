@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from './pages/home';
-import Brancehs from './pages/branches';
 import OurCustomers from './pages/ourCustomers';
 import OurServices from './pages/ourServices';
 import OurStory from './pages/ourStroy';
@@ -23,7 +22,6 @@ function App() {
         <nav style={{ position: 'fixed', right: 0, top: 0, width: '100%', zIndex: 100 }}><NavBar /></nav>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/branches' element={<Brancehs />} />
           <Route path='/ourCustomers' element={<OurCustomers />} />
           <Route path='/ourServices' element={<OurServices />} />
           <Route path='/ourStory' element={<OurStory />} />
@@ -33,7 +31,7 @@ function App() {
           <Route path='/ourteam/mohsenamoushahi' element={<Mohsenamoushahi />} />
         </Routes>
         <footer style={{ position: 'fixed', right: 0, bottom: 0, width: '100%', zIndex: 100 }}><Footer /></footer>
-        {/* <FooterPage /> */}
+        <FooterPage />
       </BrowserRouter>
     </div>
   );

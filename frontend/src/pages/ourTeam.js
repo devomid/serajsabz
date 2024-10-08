@@ -18,7 +18,7 @@ const OurTeam = () => {
                 "autoPlay": true,
                 "background": {
                     "color": {
-                        "value": "#0c4b53"
+                        "value": "#484d2c"
                     },
                     "image": "",
                     "position": "",
@@ -557,10 +557,10 @@ const OurTeam = () => {
                             <Box>
                                 <img onClick={() => { navigate('/ourteam/janyarbahrami') }} width={'100%'} src='https://img.freepik.com/free-photo/portrait-optimistic-businessman-formalwear_1262-3600.jpg' />
                             </Box>
-                            <Typography sx={{color:'white'}} level='h3'>
+                            <Typography sx={{ color: 'white' }} level='h3'>
                                 Janyar Bahrami
                             </Typography>
-                            <Typography sx={{color:'white'}} level='h5'>
+                            <Typography sx={{ color: 'white' }} level='h5'>
                                 CEO
                             </Typography>
                             <Box>
