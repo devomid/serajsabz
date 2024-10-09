@@ -550,18 +550,14 @@ const Home = () => {
                         options={options}
                     />
                 </Box>
-                <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-                    <Grid size={8}>
-                        <Box sx={{ position: 'fixed', left: 0, display: menuOpen && 'none' }}>
-                            <ScrollDependentComponent>
-                                <OurStroryShort />
-                                <OurCustomersShort />
-                                <OurServicesShort />
-                                <OurTeamShort />
-                            </ScrollDependentComponent>
-                        </Box>
-                    </Grid>
-                </Grid>
+                <Box sx={{ position: 'fixed', left: 0, display: menuOpen && 'none' }}>
+                    <ScrollDependentComponent>
+                        <OurStroryShort />
+                        <OurCustomersShort />
+                        <OurServicesShort />
+                        <OurTeamShort />
+                    </ScrollDependentComponent>
+                </Box>
             </Box>
         </>
     )

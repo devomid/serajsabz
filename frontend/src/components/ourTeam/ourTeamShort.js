@@ -9,6 +9,7 @@ import 'aos/dist/aos.css'
 const OurTeamShort = () => {
     const navigate = useNavigate();
     const { isHome, setIsHome } = GeneralState();
+    
     useEffect(() => {
         Aos.init();
     }, []);
@@ -22,9 +23,10 @@ const OurTeamShort = () => {
                     setIsHome(false);
                 }} width={'100%'} height={'100%'} src='https://www.photographer.com.au/wp-content/uploads/2011/03/corporate-group-photo-sydney.jpg' />
 
-                <Typography maxHeight={'200px'} component={'div'} data-aos="fade-up" data-aos-duration="3000" sx={{ width: '100%', color: 'white', truncate: true, overflow: 'hidden', textOverflow: 'ellipsis', textAlign: 'left', marginRight: 2, marginTop: 2 }}>
+                {/* <Typography maxHeight={'200px'} component={'div'} data-aos="fade-up" data-aos-duration="3000" sx={{ width: '100%', color: 'white', truncate: true, overflow: 'hidden', textOverflow: 'ellipsis', textAlign: 'left', marginRight: 2, marginTop: 2 }}>
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 Contrary to popular belief, Lorem Ipsum is not simply random text. Contrary to popular belief, Lorem Ipsum is not simply random text. Contrary to popular belief, Lorem Ipsum is not simply random text. Contrary to popular belief, Lorem Ipsum is not simply random text.
-                </Typography>
+                </Typography> */}
+
             </Grid>
 
             <Grid md={4} lg={7} xl={8} sx={{ textAlign: 'end' }}>

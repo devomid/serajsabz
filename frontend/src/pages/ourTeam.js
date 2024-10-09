@@ -1,8 +1,11 @@
-import { Box, Button, Card, Typography } from '@mui/joy';
+import { Box, Button, Card, Grid, Stack, Typography } from '@mui/joy';
 import Particles from '@tsparticles/react';
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { GeneralState } from '../contexts/generalContext';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+import ScrollDependentComponent from '../components/scrollPosition/scrollPosition';
 
 const OurTeam = () => {
     const navigate = useNavigate();
@@ -522,10 +525,13 @@ const OurTeam = () => {
             }
         )
     )
+    useEffect(() => {
+        Aos.init();
+    }, []);
 
     return (
         <>
-            <Box sx={{ height: '190vh', display: 'flex', alignItems: 'start' }}>
+            <Box sx={{ height: '255vh', display: 'flex', alignItems: 'start' }}>
                 <Box sx={{ zIndex: -1 }}>
                     <Particles
                         id="tsparticles"
@@ -533,80 +539,135 @@ const OurTeam = () => {
                         options={options}
                     />
                 </Box>
-                <Box sx={{ display: menuOpen ? 'none' : 'flex', zIndex: 2, width: '100%', margin: 2, flexDirection: 'column' }}>
+                <Box sx={{ display: menuOpen ? 'none' : 'flex', zIndex: 2, width: '100%', margin: 2, flexDirection: 'column', marginTop: '10rem' }}>
 
-                    <Box>
-                        <Box sx={{ display: 'flex', gap: 3, padding: 2, justifyContent: 'center', alignItems: 'center', height: '95vh' }}>
-                            <img style={{ borderRadius: 15 }} width={'80%'} height={'80%'} src='https://www.jonbradley.co.uk/wp-content/uploads/2020/07/TEAM-HEADSHOTS-TEAM-PAGE-ADD-IMAGES-9.jpg' alt='group shot' />
-                            <Box>
-                                <Box sx={{ marginBottom: 5 }}>
-                                    <Typography level='h2' sx={{ color: 'white' }}>
-                                        Our Team in Seraj Sabz
+
+                    <Grid container spacing={{ xs: 2, md: 3, lg: 5, xl: 8 }} columns={{ xs: 6, sm: 12, md: 12, lg: 16, xl: 18 }} sx={{ flexGrow: 1, alignItems: "center", padding: '0% 5vw 5% 5%' }}>
+
+                        <Grid xs={5} sm={11} md={8} lg={9} xl={10}>
+                            <img data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500" style={{ borderRadius: 15 }} width={'100%'} height={'100%'} src='https://www.jonbradley.co.uk/wp-content/uploads/2020/07/TEAM-HEADSHOTS-TEAM-PAGE-ADD-IMAGES-9.jpg' alt='group shot' />
+                        </Grid>
+
+                        <Grid xs={5} sm={11} md={8} lg={7} xl={8}>
+                            <Typography component={'div'} data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" level='h2' sx={{ color: 'white', marginBottom: 3 }}>
+                                Our Team in Seraj Sabz
+                            </Typography>
+                            <Typography component={'div'} data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1700" sx={{ color: 'white' }}>
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                            </Typography>
+                        </Grid>
+
+                        <Box sx={{ display: 'flex', gap: 2, marginTop: '20vh' }}>
+
+                            <Box component={'div'} data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="1000" sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
+                                <Box>
+                                    <img onClick={() => { navigate('/ourteam/janyarbahrami') }} width={'100%'} src='https://img.freepik.com/free-photo/portrait-optimistic-businessman-formalwear_1262-3600.jpg' />
+                                </Box>
+                                <Typography sx={{ color: 'white' }} level='h3'>
+                                    Janyar Bahrami
+                                </Typography>
+                                <Typography sx={{ color: 'white' }} level='h5'>
+                                    CEO
+                                </Typography>
+                                <Box>
+                                    <Typography sx={{ color: 'white' }} level='body-sm'>
+                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
                                     </Typography>
                                 </Box>
-                                <Typography sx={{ color: 'white' }}>
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                            </Box>
+
+                            <Box component={'div'} data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="1500" sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
+                                <Box>
+                                    <img onClick={() => { navigate('/ourteam/mohsenamoushahi') }} width={'100%'} src='https://img.freepik.com/premium-photo/young-businessman-outdoor-modern-setting_53419-11374.jpg' />
+                                </Box>
+                                <Typography sx={{ color: 'white' }} level='h3'>
+                                    Mohsen Amoushahi
                                 </Typography>
+                                <Typography sx={{ color: 'white' }} level='h5'>
+                                    CMO
+                                </Typography>
+                                <Box>
+                                    <Typography sx={{ color: 'white' }} level='body-sm'>
+                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+                            <Box component={'div'} data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="2000" sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
+                                <Box>
+                                    <img onClick={() => { navigate('/ourteam/omidazad') }} width={'100%'} src='https://img.freepik.com/premium-photo/professional-man-profile-portrait-business-formawear-isolated-white-copy-space-manager_545934-52514.jpg' />
+                                </Box>
+                                <Typography sx={{ color: 'white' }} level='h3'>
+                                    Omid Azad
+                                </Typography>
+                                <Typography sx={{ color: 'white' }} level='h5'>
+                                    CTO
+                                </Typography>
+                                <Box>
+                                    <Typography sx={{ color: 'white' }} level='body-sm'>
+                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                                    </Typography>
+                                </Box>
                             </Box>
                         </Box>
-                    </Box>
+                        {/* <Box sx={{ display: 'flex', gap: 2, marginTop: '5vh' }}>
 
-                    <Box sx={{ display: 'flex', gap: 1 }}>
-
-                        <Box sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
-                            <Box>
-                                <img onClick={() => { navigate('/ourteam/janyarbahrami') }} width={'100%'} src='https://img.freepik.com/free-photo/portrait-optimistic-businessman-formalwear_1262-3600.jpg' />
-                            </Box>
-                            <Typography sx={{ color: 'white' }} level='h3'>
-                                Janyar Bahrami
-                            </Typography>
-                            <Typography sx={{ color: 'white' }} level='h5'>
-                                CEO
-                            </Typography>
-                            <Box>
-                                <Typography sx={{ color: 'white' }} level='body-sm'>
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                            <Box component={'div'} data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="1000" sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
+                                <Box>
+                                    <img onClick={() => { navigate('/ourteam/janyarbahrami') }} width={'100%'} src='https://img.freepik.com/free-photo/portrait-optimistic-businessman-formalwear_1262-3600.jpg' />
+                                </Box>
+                                <Typography sx={{ color: 'white' }} level='h3'>
+                                    Janyar Bahrami
                                 </Typography>
-                            </Box>
-                        </Box>
-
-                        <Box sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
-                            <Box>
-                                <img onClick={() => { navigate('/ourteam/mohsenamoushahi') }} width={'100%'} src='https://img.freepik.com/premium-photo/young-businessman-outdoor-modern-setting_53419-11374.jpg' />
-                            </Box>
-                            <Typography sx={{ color: 'white' }} level='h3'>
-                                Mohsen Amoushahi
-                            </Typography>
-                            <Typography sx={{ color: 'white' }} level='h5'>
-                                CMO
-                            </Typography>
-                            <Box>
-                                <Typography sx={{ color: 'white' }} level='body-sm'>
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                                <Typography sx={{ color: 'white' }} level='h5'>
+                                    CEO
                                 </Typography>
+                                <Box>
+                                    <Typography sx={{ color: 'white' }} level='body-sm'>
+                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                                    </Typography>
+                                </Box>
                             </Box>
-                        </Box>
 
-                        <Box sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
-                            <Box>
-                                <img onClick={() => { navigate('/ourteam/omidazad') }} width={'100%'} src='https://img.freepik.com/premium-photo/professional-man-profile-portrait-business-formawear-isolated-white-copy-space-manager_545934-52514.jpg' />
-                            </Box>
-                            <Typography sx={{ color: 'white' }} level='h3'>
-                                Omid Azad
-                            </Typography>
-                            <Typography sx={{ color: 'white' }} level='h5'>
-                                CTO
-                            </Typography>
-                            <Box>
-                                <Typography sx={{ color: 'white' }} level='body-sm'>
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                            <Box component={'div'} data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="1500" sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
+                                <Box>
+                                    <img onClick={() => { navigate('/ourteam/mohsenamoushahi') }} width={'100%'} src='https://img.freepik.com/premium-photo/young-businessman-outdoor-modern-setting_53419-11374.jpg' />
+                                </Box>
+                                <Typography sx={{ color: 'white' }} level='h3'>
+                                    Mohsen Amoushahi
                                 </Typography>
+                                <Typography sx={{ color: 'white' }} level='h5'>
+                                    CMO
+                                </Typography>
+                                <Box>
+                                    <Typography sx={{ color: 'white' }} level='body-sm'>
+                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                                    </Typography>
+                                </Box>
                             </Box>
-                        </Box>
-                    </Box>
-                </Box>
-            </Box>
+
+                            <Box component={'div'} data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="2000" sx={{ width: '33%', display: 'flex', gap: 2, padding: 2, flexDirection: 'column', borderRadius: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px) saturate(150%)' }}>
+                                <Box>
+                                    <img onClick={() => { navigate('/ourteam/omidazad') }} width={'100%'} src='https://img.freepik.com/premium-photo/professional-man-profile-portrait-business-formawear-isolated-white-copy-space-manager_545934-52514.jpg' />
+                                </Box>
+                                <Typography sx={{ color: 'white' }} level='h3'>
+                                    Omid Azad
+                                </Typography>
+                                <Typography sx={{ color: 'white' }} level='h5'>
+                                    CTO
+                                </Typography>
+                                <Box>
+                                    <Typography sx={{ color: 'white' }} level='body-sm'>
+                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </Box> */}
+                    </Grid>
+                </Box >
+            </Box >
         </>
+
     )
 }
 
